@@ -1,0 +1,48 @@
+{
+  "name": "ts-node-graphql-boilerplate",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "git@github.com:epiloguedigital/ts-node-graphql-boilerplate.git",
+  "author": "Marc Tse <marctse@epiloguedigital.com>",
+  "license": "MIT",
+  "scripts": {
+    "watch": "tsc -w",
+    "dev": "nodemon dist/index.js",
+    "start": "ts-node src/index.ts",
+    "tsnode-start": "ts-node src/index.ts",
+    "lint": "eslint '*/**/*.{js,ts}' --quiet --fix"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.29",
+    "@typescript-eslint/eslint-plugin": "^4.7.0",
+    "@typescript-eslint/parser": "^4.7.0",
+    "eslint": "^7.13.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-airbnb-typescript": "^12.0.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.5.1",
+    "nodemon": "^2.0.6",
+    "prettier": "^2.1.2",
+    "ts-node": "3.3.0",
+    "typescript": "3.3.3333"
+  },
+  "dependencies": {
+    "mysql": "^2.14.1",
+    "pg": "^8.4.2",
+    "reflect-metadata": "^0.1.10",
+    "typeorm": "0.2.29"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn build"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": "eslint --fix"
+  }
+}
